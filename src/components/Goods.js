@@ -3,7 +3,6 @@ import { setGoods } from '../actions';
 import { useDispatch, useSelector } from 'react-redux';
 import { getSortedGoods } from '../selectors';
 import GoodsList from './GoodsList';
-import { equals } from 'ramda';
 
 const fetchGoods = () => Promise.resolve([
     {name: 'tomatoes', price: 3},
@@ -20,7 +19,7 @@ const Goods = () => {
         dispatch(setGoods(goods));
     }, []);
 
-    const goods = useSelector(getSortedGoods,/* equals */);
+    const goods = useSelector(getSortedGoods);
 
     return (
         <Fragment>

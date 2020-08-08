@@ -21,3 +21,8 @@ export const GoodsList = ({ goods }) => {
 };
 
 export default GoodsList;
+
+
+
+
+                                                                
