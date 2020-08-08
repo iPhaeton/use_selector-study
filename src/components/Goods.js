@@ -1,4 +1,4 @@
-import React, { useCallback, Fragment } from 'react';
+import React, { useCallback, Fragment, useMemo } from 'react';
 import { setGoods } from '../actions';
 import { useDispatch, useSelector } from 'react-redux';
 import { getSortedGoods, getUpdatedAt } from '../selectors';
@@ -19,7 +19,8 @@ const Goods = () => {
         dispatch(setGoods(goods));
     }, []);
 
-    const goods = useSelector(getSortedGoods(3));
+    const goodsSelector = useMemo(() => getSortedGoods(3), []);
+    const goods = useSelector(goodsSelector);
 
     const updatedAt = useSelector(getUpdatedAt);
 

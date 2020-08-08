@@ -6,7 +6,7 @@ export const getUpdatedAt = state => state.goods.updatedAt;
 export const getSortedGoods = (count) => createSelector(
     getGoods,
     goods => {
-        console.log('slecting')
+        console.log('selecting')
         return goods.slice().sort((a, b) => a.price - b.price).slice(0, count)
     },
 );
