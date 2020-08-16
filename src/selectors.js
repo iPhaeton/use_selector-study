@@ -3,7 +3,7 @@ import { createSelector } from 'reselect';
 export const getGoods = state => state.goods.list;
 export const getUpdatedAt = state => state.goods.updatedAt;
 
-export const getSortedGoods = (count) => createSelector(
+export const createGetSortedGoods = (count) => createSelector(
     getGoods,
     goods => {
         console.log('selecting')
